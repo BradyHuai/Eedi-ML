@@ -1,0 +1,45 @@
+limitations 
+
+We are discussing limitation by introducing the possible situations that our model may fail. 
+
+1. Hyper-parameters are hard to tune.
+Models like logistic regression uses gradient descent to find the optimal parameters. 
+The learning rate is a hyper-parameter that is hard to tune. 
+If the learning rate is too small, it will take a long time to converge. 
+If the learning rate is too large, it may not converge at all.
+
+2. The model is not flexible enough.
+The model we use is a linear model, which means the relationship between the response and the predictors is linear.
+One possible solution is to use a non-linear model, such as a neural network.
+However neural networks are more complicated and require more data to train.
+
+3. The model is not robust enough.
+If the data is not robust, the model will not work well.
+Since the model is linear, it is sensitive to outliers.
+If there are outliers in the data, the model will not work well.
+
+4. We have not considered the gender, date of birth, and premium_pupil of the students in the model.
+These factors may potentially influence the prediction if there exits a correlation between them and the results.
+One possible extension to add all these information as given factor to help us improve the prediction.
+However, we need to be careful about the multicollinearity problem.
+
+5. We need large amount of data to train if we want to get a good model.
+Since we group the student ability into classes based on the question subject, we need a large amount of data to train the model.
+Each question may have small amount of data.
+The more data we have, the better model we can get.
+If we have a large amount of data, we can use cross-validation to get a better model.
+One possible extension is to bootstrap the data to get more data to train the model.
+Another possible extension is to use prior knowledge to help us get a better model, 
+similar to Maximum A-Posteriori estimation, we can use prior knowledge to help us get a better model.
+
+
+However, we need to be careful about the multicollinearity problem.
+
+
+In order to test our model actually has improvement then the original one, 
+we select what the original model has predicted wrong 
+and check whether or not our new model can get the correct prediction. 
+To keep the univariate principle, we set both models with the same hyper parameters. 
+According to our test result, the original model actually has 2052 wrong predictions among over 
+7000 data in “is_correct” and our new model get 156 correct predictions among these boring choices. 
+We can see our new model actually perform better in some situations compared with the original one.
